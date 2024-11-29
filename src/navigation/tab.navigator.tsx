@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 import {palette} from '../theme/palette';
-import MovieList from '../screens/MovieList.screen';
+import UpcomingMovieListScreen from '../screens/UpcomingMovieList.screen';
 import styles from './styles';
 import tabConfig from './tab.config';
 
@@ -55,6 +55,7 @@ const TabNavigator = () => {
           borderTopRightRadius: 27,
           borderTopLeftRadius: 27,
         },
+        headerShown: false,
       })}>
       <Tab.Screen
         name={tabConfig.Dashboard.name as keyof TabParamList}
@@ -62,11 +63,11 @@ const TabNavigator = () => {
           tabBarButton: ({onPress}) =>
             renderTabBarButton(onPress, tabConfig.Dashboard.name),
         }}
-        component={MovieList}
+        component={UpcomingMovieListScreen}
       />
       <Tab.Screen
         name={tabConfig.Watch.name as keyof TabParamList}
-        component={MovieList}
+        component={UpcomingMovieListScreen}
         options={{
           tabBarButton: ({onPress}) =>
             renderTabBarButton(onPress, tabConfig.Watch.name),
@@ -78,7 +79,7 @@ const TabNavigator = () => {
           tabBarButton: ({onPress}) =>
             renderTabBarButton(onPress, tabConfig.MediaLibrary.name),
         }}
-        component={MovieList}
+        component={UpcomingMovieListScreen}
       />
       <Tab.Screen
         name={tabConfig.More.name as keyof TabParamList}
@@ -86,7 +87,7 @@ const TabNavigator = () => {
           tabBarButton: ({onPress}) =>
             renderTabBarButton(onPress, tabConfig.MediaLibrary.name),
         }}
-        component={MovieList}
+        component={UpcomingMovieListScreen}
       />
     </Tab.Navigator>
   );
